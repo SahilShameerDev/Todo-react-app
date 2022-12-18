@@ -1,10 +1,10 @@
 import "./App.css";
-import Todo from "./components/todo/Todo";
+import InputBar from "./components/InputBar/InputBar";
 
 function App() {
   return (
     <div>
-      <Todo />
+      <InputBar />
     </div>
   );
 }
