@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Todo from "../todo/Todo";
+import Todo from "../todo/Todo.tsx";
 import "./InputBar.css";
 
 function InputBar() {

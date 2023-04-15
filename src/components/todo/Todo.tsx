@@ -2,12 +2,38 @@ import React from "react";
 import "./Todo.css";
 
 function Todo(props) {
+  const dragItemsRef = React.useRef<any>(null);
+  const dragOverItemsRef = React.useRef<any>(null);
+
+  console.log(props.todoos);
+  
+
+  const handleSort = () => {
+    let _items = [...props.todoos];
+
+    const draggedItemContent = _items.splice(dragItemsRef.current, 1)[0];
+
+    _items.splice(dragOverItemsRef.current, 0, draggedItemContent);
+
+    dragItemsRef.current = null;
+    dragOverItemsRef.current = null;
+
+    props.settodoos(_items);
+  };
+
   return (
     <div className="list">
-      {props.todoos.map((value) => {
+      {props.todoos.map((value, index) => {
         return (
           <div className="todos">
-            <div className="todo">
+            <div
+              className="todo"
+              draggable
+              onDragStart={(e) => (dragItemsRef.current = index)}
+              onDragEnter={(e) => (dragOverItemsRef.current = index)}
+              onDragEnd={handleSort}
+              onDragOver={(e)=>e.preventDefault()}
+            >
               <div className="left">
                 <label>
                   <input
@@ -51,7 +77,7 @@ function Todo(props) {
                   onClick={(event) => {
                     props.settodoos(
                       props.todoos.filter((obj) => {
-                        if (obj.id != value.id) {
+                        if (obj.id !== value.id) {
                           return value;
                         }
                       })

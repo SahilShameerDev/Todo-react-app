@@ -13,8 +13,8 @@
 }
 
 .app .mainHeading h1 {
-    font-family: 'Josefin Sans', sans-serif;
-    color: aliceblue;
+  font-family: 'Josefin Sans', sans-serif;
+  color: aliceblue;
 }
 
 .app .input {
@@ -38,17 +38,17 @@
 }
 
 .app .input input {
-    background-color: hsl(235, 24%, 19%);
-    color: aliceblue;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400px;
-    width: 100%;
-    height: 1.6em;
-    border-color: transparent;
-    outline-color: transparent;
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    appearance:none;
+  background-color: hsl(235, 24%, 19%);
+  color: aliceblue;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400px;
+  width: 100%;
+  height: 1.6em;
+  border-color: transparent;
+  outline-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .app i {
